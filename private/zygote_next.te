@@ -4,6 +4,10 @@ type zygote_next_exec, system_file_type, exec_type, file_type;
 typeattribute zygote_next coredomain;
 typeattribute zygote_next mlstrustedsubject;
 
+# Define and allow access to a unique tmpfs type for memfd secctx transfer.
+type zygote_next_tmpfs, file_type;
+tmpfs_domain(zygote_next);
+
 init_daemon_domain(zygote_next)
 set_prop(zygote_next, zygote_zygote_next_server_status_prop)
 
