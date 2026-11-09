@@ -919,9 +919,9 @@ $1
 # define_prop(name, owner, scope)
 # Define a property with given owner and scope
 #
-define(`define_prop', `
+define(`define_prop', `ifdef(`_prop_defined_$1', `', `define(`_prop_defined_$1', `1')
   type $1, property_type, $2_property_type, $2_$3_property_type;
-')
+')')
 
 ###########################################
 # system_internal_prop(name)
